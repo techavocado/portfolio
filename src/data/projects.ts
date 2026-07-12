@@ -35,6 +35,10 @@ export interface Project {
   solution: string;
   challenges: Challenge[];
   learnings: string[];
+  architecture?: {
+    description: string;
+    items: string[];
+  };
   gallery: GalleryImage[];
 }
 
@@ -42,110 +46,123 @@ export const projects: Project[] = [
   {
     slug: "stayvista",
     name: "StayVista",
-    shortSummary: "A full-stack hotel booking platform with authentication, image management, interactive maps, and responsive design.",
-    description: "A production-ready hotel booking platform built with the MERN stack, featuring complete authentication flows, Cloudinary image management, interactive Mapbox integration, and a responsive mobile-first design.",
-    banner: "/projects/stayvista-banner.jpg",
+    shortSummary: "A full-stack vacation rental platform with user authentication, property listings, image uploads, interactive maps, and responsive design.",
+    description: "StayVista is a full-stack vacation rental platform inspired by Airbnb. Users can browse listings, search properties, create accounts, log in securely, add new listings, manage properties, view location maps, and interact with listing details through a modern responsive interface.",
+    banner: "/projects/stayvista-homepage.jpg",
     githubUrl: "https://github.com",
     liveUrl: "https://stayvista.demo",
     techStack: [
+      { name: "HTML", icon: "◇", color: "#E34F26" },
+      { name: "CSS", icon: "◉", color: "#1572B6" },
+      { name: "JavaScript", icon: "◈", color: "#F7DF1E" },
+      { name: "Bootstrap", icon: "B", color: "#7952B3" },
+      { name: "EJS", icon: "📄", color: "#A91E50" },
       { name: "Node.js", icon: "○", color: "#339933" },
       { name: "Express.js", icon: "◇", color: "#404040" },
       { name: "MongoDB", icon: "◎", color: "#47A248" },
+      { name: "Mongoose", icon: "◎", color: "#880000" },
       { name: "Passport.js", icon: "🔒", color: "#34E27A" },
+      { name: "Express Session", icon: "⊡", color: "#6B7280" },
       { name: "Cloudinary", icon: "☁", color: "#3448C5" },
-      { name: "Mapbox GL", icon: "🗺", color: "#4264FB" },
-      { name: "EJS", icon: "📄", color: "#A91E50" },
-      { name: "Bootstrap", icon: "B", color: "#7952B3" },
+      { name: "Multer", icon: "⬆", color: "#FF6B6B" },
+      { name: "Mapbox", icon: "🗺", color: "#4264FB" },
+      { name: "REST APIs", icon: "⇄", color: "#5A29E4" },
     ],
     overview: {
-      what: "StayVista is a comprehensive hotel booking platform that allows users to discover, list, and book unique accommodations. Built as a full-stack application, it provides a complete marketplace experience with host dashboards, interactive property discovery, and secure booking workflows.",
-      why: "The project was built to demonstrate proficiency in full-stack web development, specifically showcasing skills in authentication systems, third-party API integrations, geospatial data handling, and image management workflows that are essential in modern web applications.",
+      what: "StayVista is a full-stack vacation rental platform inspired by Airbnb that allows users to browse listings, search properties, create accounts, log in securely, add new listings, manage properties, view location maps, and interact with listing details through a modern responsive interface.",
+      why: "Built to demonstrate comprehensive full-stack development skills including secure authentication, database design, REST APIs, cloud integration, maps integration, and real-world CRUD operations.",
       features: [
-        "Complete user authentication with Passport.js (local + OAuth strategies)",
-        "CRUD operations for property listings with image uploads",
-        "Cloudinary-powered image optimization and transformation",
-        "Interactive Mapbox maps with property geocoding",
-        "Responsive Bootstrap UI with mobile-first design",
-        "Review and rating system for properties",
-        "Search and filter properties by location and amenities",
-        "Session-based authorization with protected routes",
+        "User Authentication & Authorization",
+        "Login / Signup System",
+        "Add New Property Listings",
+        "Edit & Delete Listings",
+        "Image Upload Support",
+        "Interactive Maps with Mapbox",
+        "Search & Filtering",
+        "Reviews & Ratings",
+        "Responsive Design",
+        "Session Management"
       ],
     },
-    problem: "Traditional hotel booking platforms are complex systems with many moving parts. The challenge was to build a production-ready full-stack application that handles user authentication securely, manages media assets efficiently, provides location-based property discovery, and maintains a responsive user experience across all devices.",
-    solution: "Implemented a robust MVC architecture using Express.js with MongoDB as the document store for flexible data modeling. Passport.js handles authentication with multiple strategies including local login and OAuth. Cloudinary serves as the media management layer with on-the-fly image transformations. Mapbox GL provides interactive mapping with geocoding for property locations. EJS templating with Bootstrap ensures server-side rendering with a responsive design.",
+    problem: "Developing a robust vacation rental platform requires handling complex data relationships, secure user authentication, geospatial data, and reliable media management while ensuring a responsive and intuitive user experience.",
+    solution: "Designed a secure MVC architecture leveraging Express.js and MongoDB. Integrated Passport.js for robust session-based authentication. Utilized Mapbox for interactive property location visualization and Cloudinary for optimized image storage. Implemented a responsive user interface with EJS and Bootstrap.",
     challenges: [
       {
-        title: "Image Upload & Management at Scale",
-        description: "Handling multiple image uploads per listing with validation, resizing, and efficient storage delivery was a significant challenge. Raw file uploads can quickly overwhelm server storage and impact page load times.",
-        solution: "Integrated Cloudinary as a cloud-based media management solution. Implemented middleware for image validation (type, size limits), then streamed uploads directly to Cloudinary. Used Cloudinary's transformation API to deliver optimized images with automatic format selection (WebP/AVIF) and responsive sizing breakpoints.",
-      },
-      {
-        title: "Geocoding & Map Integration",
-        description: "Converting user-provided addresses into precise map coordinates and rendering interactive maps with property markers required careful handling of geospatial data and third-party API integration.",
-        solution: "Integrated Mapbox Geocoding API to convert addresses to coordinates on listing creation. Stored geoJSON Point data in MongoDB for geospatial queries. Rendered interactive maps using Mapbox GL JS with custom property markers, popups showing property previews, and smooth fly-to animations when selecting properties.",
-      },
-      {
         title: "Session Security & Authorization",
-        description: "Implementing secure session management with proper authorization checks across routes while maintaining a seamless user experience required careful security considerations.",
-        solution: "Used express-session with secure cookie configuration (HttpOnly, Secure, SameSite). Implemented Passport.js with bcrypt password hashing and salting. Created middleware for route protection that checks authentication status and redirects unauthorized users. Added CSRF protection for state-changing operations.",
+        description: "Implementing secure session management and protecting routes based on user ownership.",
+        solution: "Integrated Passport.js with secure session cookies and created custom middleware to verify property ownership before allowing edit or delete operations.",
       },
+      {
+        title: "Media Management & Optimization",
+        description: "Handling user-uploaded property images efficiently without overloading the server.",
+        solution: "Integrated Cloudinary API to handle image uploads, validation, and dynamic resizing, storing only secure URLs in the MongoDB database.",
+      },
+      {
+        title: "Geospatial Integration",
+        description: "Converting user-entered property addresses into map coordinates and displaying them interactively.",
+        solution: "Used Mapbox Geocoding API on the backend to convert locations into GeoJSON points, rendering them accurately on the frontend map interface.",
+      }
     ],
+    architecture: {
+      description: "The application is built using a classic Model-View-Controller (MVC) architectural pattern tailored for Express.js applications.",
+      items: [
+        "Model Layer: Mongoose schemas define the data structure for Users, Properties, and Reviews with strict validation rules.",
+        "View Layer: EJS templates generate dynamic HTML on the server, styled rapidly using Bootstrap components.",
+        "Controller Layer: Express routing logic handles business operations, data processing, and interaction with the MongoDB database.",
+        "Security Layer: Middleware functions handle Passport.js authentication strategies, authorization checks, and session persistence.",
+        "External Services: Cloudinary handles cloud-based image asset management, and Mapbox provides geospatial encoding and mapping."
+      ]
+    },
     learnings: [
-      "Server-side rendering with EJS provides excellent performance for content-heavy pages while maintaining SEO friendliness",
-      "Cloud-based media management (Cloudinary) significantly simplifies image handling compared to self-hosted solutions",
-      "Geospatial data in MongoDB enables powerful location-based queries that would be complex in relational databases",
-      "Passport.js modular authentication system allows easy addition of new auth strategies without refactoring existing code",
-      "Session-based auth with proper security headers provides a robust authentication flow for traditional web apps",
+      "Mastered session-based authentication and secure routing using Passport.js.",
+      "Gained practical experience managing cloud assets via external APIs like Cloudinary.",
+      "Understood the intricacies of integrating geospatial data using GeoJSON and Mapbox.",
+      "Improved data modeling skills using MongoDB references and population.",
+      "Learned the importance of middleware in Express for code reusability and security."
     ],
     gallery: [
       {
+        src: "/projects/stayvista-homepage.jpg",
+        title: "Homepage",
+        description: "Browse and discover vacation properties with filters and categories.",
+        features: ["Category Filters", "Property Grid", "Search & Navigation"],
+      },
+      {
         src: "/projects/stayvista-login.jpg",
-        title: "Authentication System",
-        description: "Multi-strategy authentication system built with Passport.js, supporting both local email/password login and OAuth integration with Google and GitHub.",
-        features: [
-          "Session-based authentication with secure cookies",
-          "Bcrypt password hashing with salt rounds",
-          "OAuth 2.0 integration for social login",
-          "Protected route middleware",
-          "Flash messages for user feedback",
-        ],
+        title: "Login",
+        description: "Secure user authentication using Passport.js and sessions.",
+        features: ["Session-based Authentication", "Secure Password Handling", "Form Validation"],
+      },
+      {
+        src: "/projects/stayvista-signup.jpg",
+        title: "Signup",
+        description: "User registration with validation and account creation.",
+        features: ["User Registration", "Input Validation", "Instant Feedback"],
+      },
+      {
+        src: "/projects/stayvista-addlisting.jpg",
+        title: "Add Listing",
+        description: "Create and publish property listings with images and details.",
+        features: ["Property Form", "Cloudinary Image Upload", "Data Validation"],
+      },
+      {
+        src: "/projects/stayvista-details.jpg",
+        title: "Property Details",
+        description: "View complete listing information, owner details and reviews.",
+        features: ["Listing Details", "Review System", "Owner Information"],
       },
       {
         src: "/projects/stayvista-map.jpg",
-        title: "Interactive Map Discovery",
-        description: "Mapbox GL-powered interactive map allowing users to explore properties geographically with custom markers, popups, and smooth navigation animations.",
-        features: [
-          "Geocoding API for address-to-coordinates conversion",
-          "Custom property markers with price tags",
-          "Interactive popup previews on marker click",
-          "Smooth fly-to location animations",
-          "Clustering for dense property areas",
-        ],
+        title: "Map View",
+        description: "Interactive property location display using Mapbox.",
+        features: ["Mapbox Integration", "Location Markers", "Interactive Navigation"],
       },
       {
-        src: "/projects/stayvista-listing.jpg",
-        title: "Property Detail Page",
-        description: "Comprehensive property listing page with image gallery, amenities showcase, booking calendar, host information, and guest review system.",
-        features: [
-          "Responsive image gallery with Cloudinary optimization",
-          "Amenities grid with icon indicators",
-          "Interactive booking date selection",
-          "Host profile card with verification badge",
-          "Star-rated review and comment system",
-        ],
-      },
-      {
-        src: "/projects/stayvista-dashboard.jpg",
-        title: "Host Dashboard",
-        description: "User dashboard for managing property listings with full CRUD capabilities, analytics overview, and booking management interface.",
-        features: [
-          "Grid view of all user listings with quick actions",
-          "Edit and delete functionality for each property",
-          "Add new listing wizard with multi-step form",
-          "Booking status overview and management",
-          "Responsive card-based layout",
-        ],
-      },
+        src: "/projects/stayvista-logout.jpg",
+        title: "Logout Modal",
+        description: "Secure session termination and user logout workflow.",
+        features: ["Session Destruction", "Confirmation Modal", "Secure Redirects"],
+      }
     ],
   },
   {

@@ -188,15 +188,15 @@ export default function ProjectPage() {
               <p className="text-[#525252] leading-relaxed">{project.overview.why}</p>
             </div>
           </div>
-          <div className="bg-white rounded-2xl p-6 border border-[#E5E5E5]">
-            <h3 className="text-sm font-bold text-[#737373] uppercase tracking-wider mb-4">Key Features</h3>
-            <div className="grid sm:grid-cols-2 gap-3">
+          <div className="mt-12">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0A0A0A] mb-6 tracking-tight">Key Features</h3>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {project.overview.features.map((feature, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <span className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#DBEAFE] flex items-center justify-center">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
-                  </span>
-                  <span className="text-sm text-[#525252] leading-relaxed">{feature}</span>
+                <div key={i} className="bg-white rounded-xl p-5 border border-[#E5E5E5] hover:border-[#1E40AF]/30 hover:shadow-lg transition-all duration-300 group">
+                  <div className="w-10 h-10 rounded-lg bg-[#F7F7F3] flex items-center justify-center mb-4 group-hover:bg-[#DBEAFE] transition-colors">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                  </div>
+                  <h4 className="font-semibold text-[#0A0A0A] leading-snug">{feature}</h4>
                 </div>
               ))}
             </div>
@@ -304,6 +304,38 @@ export default function ProjectPage() {
             ))}
           </div>
         </section>
+
+        {/* Architecture */}
+        {project.architecture && (
+          <section
+            data-section="architecture"
+            className={`mb-20 transition-all duration-700 ${
+              isRevealed('architecture') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-block w-2 h-2 rounded-full bg-blue-500" />
+              <span className="text-xs font-bold text-blue-500 uppercase tracking-[0.12em]">Architecture</span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0A0A0A] mb-6 tracking-tight">System Architecture</h2>
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                </div>
+                <p className="text-[#525252] leading-relaxed text-lg">{project.architecture.description}</p>
+              </div>
+              <ul className="space-y-4">
+                {project.architecture.items.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 bg-white/60 p-4 rounded-xl border border-blue-100/50">
+                    <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-blue-500" />
+                    <span className="text-[#525252] text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* Learnings */}
         <section
