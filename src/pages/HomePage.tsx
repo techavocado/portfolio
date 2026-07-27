@@ -75,7 +75,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center pt-16 pb-6 px-4 sm:px-6 sm:pt-32 sm:pb-16 relative overflow-hidden" id="home">
+    <section className="pt-20 pb-8 px-4 sm:min-h-screen sm:flex sm:items-center sm:px-6 sm:pt-32 sm:pb-16 relative overflow-hidden" id="home">
       <div className="max-w-[1200px] mx-auto w-full">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           {/* Left Content */}
