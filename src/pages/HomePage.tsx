@@ -75,14 +75,14 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center pt-32 pb-16 px-6 relative overflow-hidden" id="home">
+    <section className="min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6 sm:pt-32 sm:pb-16 relative overflow-hidden" id="home">
       <div className="max-w-[1200px] mx-auto w-full">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div>
             {/* Tag */}
             <div
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-[#E5E5E5] rounded-full text-sm font-medium text-[#525252] mb-8 shadow-sm"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2.5 bg-white border border-[#E5E5E5] rounded-full text-xs sm:text-sm font-medium text-[#525252] mb-6 sm:mb-8 shadow-sm"
               style={{ animation: 'fadeUp 0.7s ease 0.1s forwards', opacity: 0, transform: 'translateY(16px)' }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -90,7 +90,7 @@ function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-[3.6rem] font-extrabold leading-[1.15] tracking-tight mb-6">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-extrabold leading-[1.15] tracking-tight mb-6">
               <span className="block" style={{ animation: 'fadeUp 0.8s ease 0.15s forwards', opacity: 0, transform: 'translateY(24px)' }}>
                 Hi, I'm Himanshu Swami
               </span>
@@ -104,7 +104,7 @@ function HeroSection() {
 
             {/* Subheading */}
             <p
-              className="text-base md:text-lg text-[#525252] max-w-[520px] leading-relaxed mb-8"
+              className="text-sm sm:text-base md:text-lg text-[#525252] max-w-[520px] leading-relaxed mb-8"
               style={{ animation: 'fadeUp 0.8s ease 0.5s forwards', opacity: 0, transform: 'translateY(16px)' }}
             >
               Software Developer with experience in Full Stack Development, Networking, Cryptography, and Quantum Key Distribution Networks. Currently working as a Software Development Intern at ISRO SAC.
@@ -112,21 +112,21 @@ function HeroSection() {
 
             {/* CTAs */}
             <div
-              className="flex flex-wrap gap-3.5 mb-10"
+              className="flex flex-wrap gap-3 mb-8 sm:gap-3.5 sm:mb-10"
               style={{ animation: 'fadeUp 0.8s ease 0.65s forwards', opacity: 0, transform: 'translateY(16px)' }}
             >
-              <a href="#projects" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0A0A0A] text-white font-semibold text-sm hover:bg-[#1E40AF] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
+              <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex items-center gap-2 px-5 py-3 sm:px-7 sm:py-3.5 rounded-full bg-[#0A0A0A] text-white font-semibold text-xs sm:text-sm hover:bg-[#1E40AF] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300">
                 View Projects
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-              <a href="#contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-[#E5E5E5] text-[#0A0A0A] font-semibold text-sm hover:border-[#0A0A0A] hover:bg-white transition-all duration-300">
+              </button>
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex items-center gap-2 px-5 py-3 sm:px-7 sm:py-3.5 rounded-full border border-[#E5E5E5] text-[#0A0A0A] font-semibold text-xs sm:text-sm hover:border-[#0A0A0A] hover:bg-white transition-all duration-300">
                 Get in Touch
-              </a>
+              </button>
             </div>
 
             {/* Stats */}
             <div
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap gap-2 sm:gap-3"
               style={{ animation: 'fadeUp 0.8s ease 0.8s forwards', opacity: 0, transform: 'translateY(16px)' }}
             >
               {[
@@ -136,10 +136,10 @@ function HeroSection() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-white border border-[#E5E5E5] rounded-xl px-6 py-4 min-w-[120px] hover:-translate-y-1 hover:shadow-lg hover:border-[#1E40AF] transition-all duration-300 cursor-default"
+                  className="bg-white border border-[#E5E5E5] rounded-xl px-4 py-3 sm:px-6 sm:py-4 min-w-[100px] sm:min-w-[120px] hover:-translate-y-1 hover:shadow-lg hover:border-[#1E40AF] transition-all duration-300 cursor-default"
                 >
-                  <div className="text-2xl font-extrabold text-[#0A0A0A] leading-none mb-1">{stat.value}</div>
-                  <div className="text-xs text-[#737373] font-medium uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-lg sm:text-2xl font-extrabold text-[#0A0A0A] leading-none mb-1">{stat.value}</div>
+                  <div className="text-[10px] sm:text-xs text-[#737373] font-medium uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -243,15 +243,15 @@ function AboutSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-white border-y border-[#E5E5E5]" id="about">
+    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="about">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid lg:grid-cols-[1.4fr_0.9fr] gap-12 items-start">
           {/* Left */}
           <div>
             <RevealSection>
               <SectionLabel text="About" />
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-6">About Me</h2>
-              <p className="text-lg text-[#525252] leading-relaxed mb-8">
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-6">About Me</h2>
+              <p className="text-base sm:text-lg text-[#525252] leading-relaxed mb-8">
                 Engineer, builder, and lifelong learner passionate about secure systems, software engineering, networking, and emerging technologies.
               </p>
             </RevealSection>
@@ -280,7 +280,7 @@ function AboutSection() {
                   <img
                     src="/profile.jpg"
                     alt="Himanshu Swami - Software Developer"
-                    className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-xl group-hover:shadow-2xl group-hover:scale-105 transition-all duration-500"
+                    className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-[3px] sm:border-4 border-white shadow-xl group-hover:shadow-2xl group-hover:scale-105 transition-all duration-500"
                   />
                 </div>
               </div>
@@ -292,10 +292,10 @@ function AboutSection() {
                 {facts.map((f) => (
                   <div
                     key={f.label}
-                    className="bg-[#F7F7F3] border border-[#E5E5E5] rounded-xl p-5 hover:-translate-y-1 hover:shadow-lg hover:border-[#1E40AF] transition-all duration-300 group"
+                    className="bg-[#F7F7F3] border border-[#E5E5E5] rounded-xl p-3 sm:p-5 hover:-translate-y-1 hover:shadow-lg hover:border-[#1E40AF] transition-all duration-300 group"
                   >
-                    <div className="text-2xl font-extrabold text-[#0A0A0A] leading-none mb-1.5">{f.value}</div>
-                    <div className="text-xs text-[#737373] font-medium">{f.label}</div>
+                    <div className="text-lg sm:text-2xl font-extrabold text-[#0A0A0A] leading-none mb-1 sm:mb-1.5">{f.value}</div>
+                    <div className="text-[10px] sm:text-xs text-[#737373] font-medium">{f.label}</div>
                   </div>
                 ))}
               </div>
@@ -310,18 +310,18 @@ function AboutSection() {
 /* ─── Experience Section (with ISRO logo) ─── */
 function ExperienceSection() {
   return (
-    <section className="py-24 px-6 bg-[#F7F7F3]" id="experience">
+    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="experience">
       <div className="max-w-[1200px] mx-auto">
         <RevealSection>
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <SectionLabel text="Experience" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Where I Have Worked</h2>
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Where I Have Worked</h2>
             <p className="text-lg text-[#525252]">Hands-on experience building systems for next-generation communication technologies.</p>
           </div>
         </RevealSection>
 
         <RevealSection delay={100}>
-          <div className="bg-white rounded-3xl p-8 md:p-10 border border-[#E5E5E5] relative overflow-hidden max-w-[900px] hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group">
+          <div className="bg-white rounded-3xl p-4 sm:p-8 md:p-10 border border-[#E5E5E5] relative overflow-hidden max-w-[900px] hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group">
             <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#1E40AF] to-blue-500" />
             <div className="flex flex-col md:flex-row gap-6 md:gap-8">
               {/* Left - Content */}
@@ -352,7 +352,7 @@ function ExperienceSection() {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg"
                   alt="ISRO Logo"
-                  className="w-20 h-20 md:w-24 md:h-24 object-contain group-hover:scale-105 transition-transform duration-500"
+                  className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
                 <span className="text-xs text-[#737373] px-4 py-2 bg-[#F7F7F3] rounded-full border border-[#E5E5E5] font-medium whitespace-nowrap">
@@ -364,7 +364,7 @@ function ExperienceSection() {
         </RevealSection>
 
         <RevealSection delay={200}>
-          <div className="bg-white rounded-3xl p-8 md:p-10 border border-[#E5E5E5] relative overflow-hidden max-w-[900px] mt-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group">
+          <div className="bg-white rounded-3xl p-4 sm:p-8 md:p-10 border border-[#E5E5E5] relative overflow-hidden max-w-[900px] mt-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group">
             <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#1E40AF] to-blue-500" />
             <div className="flex flex-col md:flex-row gap-6 md:gap-8">
               {/* Left - Content */}
@@ -394,7 +394,7 @@ function ExperienceSection() {
                 <img
                   src="/gu-logo.png"
                   alt="Gandhinagar University Logo"
-                  className="w-20 h-20 md:w-24 md:h-24 object-contain group-hover:scale-105 transition-transform duration-500"
+                  className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
                 <span className="text-xs text-[#737373] px-4 py-2 bg-[#F7F7F3] rounded-full border border-[#E5E5E5] font-medium whitespace-nowrap">
@@ -421,20 +421,20 @@ function SkillsSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-white border-y border-[#E5E5E5]" id="skills">
+    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="skills">
       <div className="max-w-[1200px] mx-auto">
         <RevealSection>
           <div className="mb-12">
             <SectionLabel text="Skills" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Technical Expertise</h2>
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Technical Expertise</h2>
             <p className="text-lg text-[#525252]">A focused toolkit built for building secure, scalable, and modern software systems.</p>
           </div>
         </RevealSection>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
           {skills.map((skill, i) => (
             <RevealSection key={skill.title} delay={i * 80}>
-              <div className="bg-[#F7F7F3] border border-[#E5E5E5] rounded-2xl p-7 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#E5E5E5] transition-all duration-500 group relative overflow-hidden">
+              <div className="bg-[#F7F7F3] border border-[#E5E5E5] rounded-2xl p-4 sm:p-7 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#E5E5E5] transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#1E40AF] to-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#1E40AF] to-blue-500 flex items-center justify-center text-white text-xs font-bold">
@@ -475,12 +475,12 @@ function SkillsSection() {
 /* ─── Projects Section ─── */
 function ProjectsSection() {
   return (
-    <section className="py-24 px-6 bg-[#F7F7F3]" id="projects">
+    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="projects">
       <div className="max-w-[1200px] mx-auto">
         <RevealSection>
           <div className="mb-14">
             <SectionLabel text="Projects" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Selected Work</h2>
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Selected Work</h2>
             <p className="text-lg text-[#525252] max-w-xl">Real-world applications built with modern technologies and security-first architecture. Click any project to explore the full case study.</p>
           </div>
         </RevealSection>
@@ -513,14 +513,14 @@ function ProjectsSection() {
                   </div>
 
                   {/* Content Side */}
-                  <div className={`p-8 md:p-10 flex flex-col justify-center ${index % 2 !== 0 ? 'md:order-1' : ''}`}>
+                  <div className={`p-5 sm:p-8 md:p-10 flex flex-col justify-center ${index % 2 !== 0 ? 'md:order-1' : ''}`}>
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-xs font-bold text-[#1E40AF] uppercase tracking-[0.12em]">Case Study</span>
                       <span className="w-8 h-px bg-[#E5E5E5]" />
                       <span className="text-xs text-[#737373]">{project.techStack.length} Technologies</span>
                     </div>
 
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0A0A0A] mb-4 tracking-tight group-hover:text-[#1E40AF] transition-colors duration-300">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A0A0A] mb-3 sm:mb-4 tracking-tight group-hover:text-[#1E40AF] transition-colors duration-300">
                       {project.name}
                     </h3>
 
@@ -597,12 +597,12 @@ function EducationSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-white border-y border-[#E5E5E5]" id="education">
+    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="education">
       <div className="max-w-[1200px] mx-auto">
         <RevealSection>
           <div className="mb-12">
             <SectionLabel text="Education" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Education</h2>
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Education</h2>
             <p className="text-lg text-[#525252]">Academic journey and milestones in Computer Science Engineering.</p>
           </div>
         </RevealSection>
@@ -623,11 +623,11 @@ function EducationSection() {
                   }`} />
 
                   {/* Card */}
-                  <div className={`bg-white rounded-2xl p-6 md:p-8 border border-[#E5E5E5] hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group flex flex-col md:flex-row gap-5 md:gap-6 items-start ${
+                  <div className={`bg-white rounded-2xl p-4 sm:p-6 md:p-8 border border-[#E5E5E5] hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-6 items-start ${
                     edu.current ? 'border-l-[3px] border-l-[#1E40AF]' : ''
                   }`}>
                     {/* Institution Logo */}
-                    <div className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-xl bg-[#F7F7F3] border border-[#E5E5E5] p-2 flex items-center justify-center group-hover:shadow-md group-hover:scale-105 group-hover:border-[#1E40AF]/30 transition-all duration-500">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl bg-[#F7F7F3] border border-[#E5E5E5] p-2 flex items-center justify-center group-hover:shadow-md group-hover:scale-105 group-hover:border-[#1E40AF]/30 transition-all duration-500">
                       <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain" loading="lazy" />
                     </div>
 
@@ -786,12 +786,12 @@ function CertificationsSection() {
 
   return (
     <>
-      <section className="py-24 px-6 bg-[#F7F7F3]" id="certifications">
+      <section className="py-16 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="certifications">
         <div className="max-w-[1200px] mx-auto">
           <RevealSection>
             <div className="mb-16">
               <SectionLabel text="Certifications" />
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Achievement Showcase</h2>
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Achievement Showcase</h2>
               <p className="text-lg text-[#525252] max-w-2xl">Industry-recognized credentials and professional development achievements that validate my technical expertise.</p>
             </div>
           </RevealSection>
@@ -813,7 +813,7 @@ function CertificationsSection() {
 
                   <div className="grid md:grid-cols-[1.2fr_1fr] gap-0">
                     {/* Left - Details */}
-                    <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                    <div className="p-5 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
                       {/* Index Badge */}
                       <div className="flex items-center gap-3 mb-5">
                         <span
@@ -827,7 +827,7 @@ function CertificationsSection() {
                       </div>
 
                       {/* Certificate Name */}
-                      <h3 className="text-xl md:text-2xl font-bold text-[#0A0A0A] tracking-tight mb-4 group-hover:text-[#1E40AF] transition-colors duration-300">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0A0A0A] tracking-tight mb-4 group-hover:text-[#1E40AF] transition-colors duration-300">
                         {cert.name}
                       </h3>
 
@@ -890,7 +890,7 @@ function CertificationsSection() {
 
                     {/* Right - Certificate Image Preview */}
                     <div
-                      className="relative overflow-hidden cursor-pointer bg-gradient-to-br from-[#F7F7F3] to-[#EBEBEB] flex items-center justify-center p-6 md:p-8 min-h-[280px] md:min-h-0"
+                      className="relative overflow-hidden cursor-pointer bg-gradient-to-br from-[#F7F7F3] to-[#EBEBEB] flex items-center justify-center p-6 md:p-8 min-h-[220px] sm:min-h-[280px] md:min-h-0"
                       onClick={() => openLightbox(i)}
                     >
                       {/* Background pattern */}
@@ -1107,7 +1107,7 @@ function ResumeSection() {
         <RevealSection>
           <div className="mb-10 md:mb-12 text-center px-2">
             <SectionLabel text="Resume" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Resume</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-3">Resume</h2>
             <p className="text-base md:text-lg text-[#525252] max-w-xl mx-auto">A detailed overview of my education, experience, projects, and technical skills.</p>
           </div>
         </RevealSection>
@@ -1202,13 +1202,13 @@ function ContactSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#F7F7F3] border-t border-[#E5E5E5] text-center" id="contact">
+    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3] border-t border-[#E5E5E5] text-center" id="contact">
       <div className="max-w-[600px] mx-auto">
         <RevealSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-4">
-            Open to Software Engineering,<br />Internship & Research Opportunities
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-4">
+            Open to Software Engineering,<br className="hidden sm:block" />Internship & Research Opportunities
           </h2>
-          <p className="text-lg text-[#525252] mb-10">
+          <p className="text-base sm:text-lg text-[#525252] mb-10">
             Let's connect and explore how we can build secure, scalable systems together.
           </p>
         </RevealSection>
@@ -1221,7 +1221,7 @@ function ContactSection() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-white border border-[#E5E5E5] rounded-full text-sm font-semibold text-[#0A0A0A] hover:border-[#1E40AF] hover:text-[#1E40AF] hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+                className="inline-flex items-center gap-2.5 px-5 py-3 sm:px-6 sm:py-3.5 bg-white border border-[#E5E5E5] rounded-full text-sm font-semibold text-[#0A0A0A] hover:border-[#1E40AF] hover:text-[#1E40AF] hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 aria-label={`Visit my ${link.label} profile`}
               >
                 {link.icon}

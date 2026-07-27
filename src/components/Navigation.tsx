@@ -17,6 +17,18 @@ export default function Navigation() {
     setMobileOpen(false);
   }, [location]);
 
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
+
   const navLinks = [
     { label: 'About', href: isHome ? '#about' : '/#about' },
     { label: 'Experience', href: isHome ? '#experience' : '/#experience' },

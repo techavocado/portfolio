@@ -211,7 +211,7 @@ export default function Lightbox({ images, currentIndex, isOpen, onClose, onNavi
         {currentIndex > 0 && (
           <button
             onClick={(e) => { e.stopPropagation(); goPrev(); }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-black/50 border border-white/10 text-white hover:bg-black/80 transition-all duration-200 hover:scale-110"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/50 border border-white/10 text-white hover:bg-black/80 transition-all duration-200 hover:scale-110"
             aria-label="Previous image"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -224,7 +224,7 @@ export default function Lightbox({ images, currentIndex, isOpen, onClose, onNavi
         {currentIndex < images.length - 1 && (
           <button
             onClick={(e) => { e.stopPropagation(); goNext(); }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full bg-black/50 border border-white/10 text-white hover:bg-black/80 transition-all duration-200 hover:scale-110"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/50 border border-white/10 text-white hover:bg-black/80 transition-all duration-200 hover:scale-110"
             aria-label="Next image"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
