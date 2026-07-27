@@ -75,7 +75,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6 sm:pt-32 sm:pb-16 relative overflow-hidden" id="home">
+    <section className="min-h-screen flex items-center pt-16 pb-6 px-4 sm:px-6 sm:pt-32 sm:pb-16 relative overflow-hidden" id="home">
       <div className="max-w-[1200px] mx-auto w-full">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           {/* Left Content */}
@@ -86,7 +86,7 @@ function HeroSection() {
               style={{ animation: 'fadeUp 0.7s ease 0.1s forwards', opacity: 0, transform: 'translateY(16px)' }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              Software Developer at SAC ISRO
+              Software Developer Intern at SAC ISRO
             </div>
 
             {/* Heading */}
@@ -243,7 +243,7 @@ function AboutSection() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="about">
+    <section className="py-8 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="about">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid lg:grid-cols-[1.4fr_0.9fr] gap-12 items-start">
           {/* Left */}
@@ -310,7 +310,7 @@ function AboutSection() {
 /* ─── Experience Section (with ISRO logo) ─── */
 function ExperienceSection() {
   return (
-    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="experience">
+    <section className="py-8 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="experience">
       <div className="max-w-[1200px] mx-auto">
         <RevealSection>
           <div className="mb-8 sm:mb-12">
@@ -421,7 +421,7 @@ function SkillsSection() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="skills">
+    <section className="py-8 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="skills">
       <div className="max-w-[1200px] mx-auto">
         <RevealSection>
           <div className="mb-12">
@@ -475,7 +475,7 @@ function SkillsSection() {
 /* ─── Projects Section ─── */
 function ProjectsSection() {
   return (
-    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="projects">
+    <section className="py-8 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="projects">
       <div className="max-w-[1200px] mx-auto">
         <RevealSection>
           <div className="mb-14">
@@ -597,7 +597,7 @@ function EducationSection() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="education">
+    <section className="py-8 px-4 sm:px-6 sm:py-24 bg-white border-y border-[#E5E5E5]" id="education">
       <div className="max-w-[1200px] mx-auto">
         <RevealSection>
           <div className="mb-12">
@@ -786,7 +786,7 @@ function CertificationsSection() {
 
   return (
     <>
-      <section className="py-16 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="certifications">
+      <section className="py-8 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3]" id="certifications">
         <div className="max-w-[1200px] mx-auto">
           <RevealSection>
             <div className="mb-16">
@@ -1102,7 +1102,7 @@ function CertificationsSection() {
 /* ─── Resume Section ─── */
 function ResumeSection() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white border-y border-[#E5E5E5]" id="resume">
+    <section className="py-8 md:py-24 px-4 sm:px-6 bg-white border-y border-[#E5E5E5]" id="resume">
       <div className="max-w-[1200px] mx-auto w-full">
         <RevealSection>
           <div className="mb-10 md:mb-12 text-center px-2">
@@ -1202,7 +1202,7 @@ function ContactSection() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3] border-t border-[#E5E5E5] text-center" id="contact">
+    <section className="py-8 px-4 sm:px-6 sm:py-24 bg-[#F7F7F3] border-t border-[#E5E5E5] text-center" id="contact">
       <div className="max-w-[600px] mx-auto">
         <RevealSection>
           <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-[#0A0A0A] tracking-tight mb-4">
